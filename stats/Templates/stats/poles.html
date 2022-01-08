@@ -1,0 +1,124 @@
+{% extends "formula1app/base.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+<div class="row" style="margin-bottom: 40px; margin-top: 40px; margin-left: 60px;"> 
+
+{% for sizas in siza %}
+
+
+<button type="button" class="btn btn-info">{{sizas.titulos}} Titulos</button>
+<button type="button" class="btn btn-warning">{{sizas.victoias}} Victorias</button>
+<button type="button" class="btn btn-warning">{{sizas.poles}} Poles</button>
+<button type="button" class="btn btn-warning">{{sizas.abandonos}} Abandonos</button>
+<button type="button" class="btn btn-warning">{{sizas.vueltasr}} Vueltas Rapidas</button>
+ 
+{% endfor %}
+
+</div>
+
+
+
+
+<div class="row" style="margin-bottom: 40px; margin-top: 40px;"> 
+
+{% for stat in stats %}
+
+  
+
+    <div class="col-md-3">
+    
+    <div class="card" style="width: 100%; margin: 10px 10px; margin-top: 50px; ">
+    
+          <img src="{{stat.foto.url}}" class="card-img-top">
+          
+          <div class="card-body" style="text-align: center;">
+          
+                <a href="{% url 'palmar' stat.nombre %}" ><h7 class"card-title">{{stat.nombre}}</h7></a>
+                <p class"card-text">{{stat.apellido}}&nbsp;</p>
+ 
+          </div>
+          
+        
+          
+      </div>
+  </div>
+
+
+    
+{% endfor %}
+  </div>
+</div>
+ 
+
+ <div class="row" style="margin-bottom: 100px; margin-top: 40px;"> 
+ 
+
+{% for pole in poles %}
+
+    <div class="col-md-3">
+    
+    <div class="card" style="width: 100%; margin: 10px 10px; margin-top: 50px; ">
+    
+          
+          <div class="card-body" style="text-align: center; background-color: rgba(40, 40, 43); color: aqua; ">
+
+
+
+                <img src="{{pole.foto.url}}" class="card-img-top"  style=" width:200px; height:200px;">
+
+                <h7 class"card-title">Año:{{pole.ano}}</h7>
+                <p class"card-text" > GP de {{pole.nombre}}&nbsp;</p>
+                {% if pole.posicicion == 1 %}
+
+                 <p class"card-text" style=" background-color:gold; color: black;">{{pole.posicicion}} Lugar&nbsp;</p>
+
+
+                {% elif pole.posicicion == 2 %}
+
+                 <p class"card-text" style=" background-color:silver; color: black;">{{pole.posicicion}} Lugar&nbsp;</p>
+                
+
+
+                {% elif pole.posicicion == 3 %}
+
+                 <p class"card-text" style=" background-color:blue; color: black;">{{pole.posicicion}} Lugar&nbsp;</p>
+
+
+                 {% else %}
+
+                 <p class"card-text" style=" background-color:blue; color: pink;">{{pole.posicicion}} Lugar&nbsp;</p>
+ 
+                 {% endif %}         
+                
+                </div>
+          
+        
+          
+      </div>
+  </div>
+
+
+    
+  
+
+
+    
+{% endfor %}
+  </div>
+</div>
+
+
+
+
+
+ 
+
+
+
+
+{% endblock %}
+ 

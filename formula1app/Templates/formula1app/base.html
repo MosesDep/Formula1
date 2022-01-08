@@ -1,0 +1,107 @@
+<html>
+
+<head>
+
+
+    {% load static%}
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="{% static 'formula1app/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+     <!-- Fonts -->
+    
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+     
+
+    <!-- Styles -->
+    <link href="{% static 'formula1app/css/gestion.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+  <script>
+    var foto=document.getElementById('foto');
+
+    contenedor.style.visibilty='hidden';
+    contenedor.style.opacity='0';
+
+
+
+
+
+}
+
+</script> 
+
+    
+
+
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+        <a href="{% url 'inicio' %}"><img src="https://seeklogo.com/images/F/formula-one-2017-logo-BCDDC2C9ED-seeklogo.com.png" alt="nbamaniacs" class="is-logo-image lazyloaded" style=" width: 300px; heigth:300px;;"> </a>
+
+      </h1>
+
+    <div class="row">
+    <div class="col-lg-12">
+        
+ 
+    </div>
+</div>
+
+
+  <i class="bi bi-bell-fill"></i>
+
+  
+
+  
+  
+  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" style="background-color: rgba(40, 40, 43);">
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'inicio' %}" style="color: aqua;">Gestion de Pedidos</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive" data-toggle="tooltip" data-placement="top" title="Inicio de la pagina Web">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item {% if request.path == '/' %}active{% endif %}  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" data-toggle="tooltip" data-placement="top" title="Inicio" href="{% url 'inicio' %}"  style="color: aqua;">Inicio</a>
+          </li>
+          <li class="nav-item  {% if request.path == '/stats/' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" data-toggle="tooltip" data-placement="top" title=" Estadisticas" href="{% url 'stats' %}"  style="color: aqua;">Estadisticas</a>
+          </li>
+          <li class="nav-item {% if request.path == '/bloguero/' %}active{% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" data-toggle="tooltip" data-placement="top" title="Mira Las ultimas Noticias " href="{% url 'bloguero' %}" style="color: aqua;">Noticias</a>
+          </li>
+          
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+<!-- Contenido cambiante  -->
+   {% block content %}
+
+
+   {% endblock %}
+
+
+    <!-- Footer -->
+    
+
+</body>
+
+
+</html>

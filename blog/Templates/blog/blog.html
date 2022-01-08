@@ -1,0 +1,49 @@
+{% extends "formula1app/base.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+
+
+  <div class="row" style="margin-bottom: 100px; margin-top: 40px;"> 
+
+{% for blog in blogs %}
+
+  
+
+    <div class="col-md-3">
+    
+    <div class="card" style="width: 150%; margin: 10px 10px; margin-top: 50px; ">
+    
+          <img src="{{blog.foto.url}}" class="card-img-top">
+          
+          <div class="card-body" style="text-align: center;">
+          
+            <a href="{% url 'contenidos' blog.titulo %}"><span class="section-heading-lower" style="color: black;"><Strong>{{blog.titulo}}</Strong></span></a>
+            <p class"card-text" style=" color: black">{{blog.autor}}&nbsp;</p>
+            <span class="section-heading-upper" style=" color: black;"> {{blog.created}} </span> 
+
+          </div>
+          
+        
+          
+      </div>
+  </div>
+
+
+    
+  
+
+
+    
+{% endfor %}
+  </div>
+</div>
+
+
+<div > <p> </p> </div> 
+
+
+{% endblock %}
