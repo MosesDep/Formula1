@@ -1,1 +1,1 @@
-web: gunicorn Formula1.wsgi
+web:gunicorn Formula1.wsgi
