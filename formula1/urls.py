@@ -15,14 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.static import serve
+from formula1 import settings
+from django.conf.urls import url
+from formula1app import urls
 
 urlpatterns = [
+
     path('admin/', admin.site.urls),
     path('', include('formula1app.urls')),
     path('stats/', include('stats.urls')),
     path('blog/', include('blog.urls')),
     path('registro/', include('registro.urls')),
     path('login/', include('login.urls')),
+    
+
+
+
 
     
     

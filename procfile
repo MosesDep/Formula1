@@ -1,0 +1,1 @@
+web: gunicorn Formula1.wsgi
